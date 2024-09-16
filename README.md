@@ -1,5 +1,5 @@
 # Calculadora
 ## ejercicio de crear una calculadora en dos estilos diferentes
-## XML
+* XML
 ## COMPOSE
 	Nahikari Vallejo
