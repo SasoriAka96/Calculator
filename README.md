@@ -5,5 +5,5 @@
 
 
 
-**$\color{Aquamarine}{Nahikari\ Vallejo.}$**
+**$\color{Aquamarine}{Nahikari\ Vallejo}$**
 	
