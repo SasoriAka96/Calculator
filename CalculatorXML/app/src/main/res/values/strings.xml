@@ -14,5 +14,8 @@
     <string name="text_minus">-</string>
     <string name="text_multiply">x</string>
     <string name="text_equals">=</string>
+    <string name="coma">,</string>
+    <string name="division">/</string>
     <string name="text_delete">AC</string>
+    <string name="text_zero">0</string>
 </resources>
