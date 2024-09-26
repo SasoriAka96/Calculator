@@ -24,6 +24,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -63,11 +64,19 @@ fun Calculadora() {
                         .padding(bottom = 80.dp),
                     colors = TextFieldDefaults.colors(
                         focusedContainerColor = Color.Transparent,
-                        unfocusedContainerColor = Color.Transparent
+                        unfocusedContainerColor = Color.Transparent,
+                        focusedIndicatorColor = Color.Transparent,
+                        unfocusedIndicatorColor = Color.Transparent
                     ),
                     value = "",
                     onValueChange = {},
-                    placeholder = { Text(text = "0", color = Color.LightGray, fontSize = 80.sp) },
+                    placeholder = {
+                        Text(
+                            text = "0",
+                            color = Color.LightGray,
+                            fontSize = 80.sp,
+                        )
+                    },
                     textStyle = androidx.compose.material3.MaterialTheme.typography.bodyLarge,
 
                     )
