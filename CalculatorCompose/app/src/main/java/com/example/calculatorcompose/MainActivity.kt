@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.paddingFrom
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -54,10 +55,6 @@ class MainActivity : ComponentActivity() {
 
 @Preview(
     showBackground = true, showSystemUi = true,
-    device = "id:pixel_8_pro"
-)
-@Preview(
-    showBackground = true, showSystemUi = true,
     device = "spec:width=448dp,height=998dp,orientation=landscape"
 )
 
@@ -86,225 +83,264 @@ fun LandscapeScreenComposition() {
 
     Column(
         Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
+            .fillMaxHeight()
             .background(color = Color.Black),
-        verticalArrangement = Arrangement.SpaceBetween
     ) {
-
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight(),
-
-            verticalArrangement = Arrangement.SpaceAround
-        ) {
-
-            Row(Modifier.padding(start = 10.dp)) {
-                Button(
-                    onClick = { numero = "" },
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4283848278))
-                ) {
-                    Text(text = "AC")
-                }
-            }
-
-            Row(
+        Row() {
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 10.dp),
-                //horizontalArrangement = Arrangement.SpaceAround
+                    .width(500.dp)
+                    .padding(start = 70.dp)
+                    .padding(top = 50.dp),
+                verticalArrangement = Arrangement.SpaceAround
             ) {
-                Button(
-                    onClick = { numero += "7" },
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523)),
+
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 10.dp),
 
                     ) {
-                    Text(text = "7")
+                    Button(
+                        onClick = { numero = "" },
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4283848278))
+                    ) {
+                        Text(text = "AC")
+                    }
                 }
-                Button(
-                    onClick = { numero += "8" },
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 10.dp)
+                        .padding(top = 10.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Text(text = "8")
+                    Button(
+                        onClick = { numero += "7" },
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523)),
+
+                        ) {
+                        Text(text = "7")
+                    }
+                    Button(
+                        onClick = { numero += "8" },
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
+                    ) {
+                        Text(text = "8")
+                    }
+                    Button(
+                        onClick = { numero += "9" },
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
+                    ) {
+                        Text(text = "9")
+                    }
+                    Button(
+                        onClick = {},
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4279402906))
+                    ) {
+                        Text(text = "x")
+                    }
                 }
-                Button(
-                    onClick = { numero += "9" },
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 10.dp)
+                        .padding(top = 10.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Text(text = "9")
+                    Button(
+                        onClick = { numero += "4" },
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
+                    ) {
+                        Text(text = "4")
+                    }
+                    Button(
+                        onClick = { numero += "5" },
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
+                    ) {
+                        Text(text = "5")
+                    }
+                    Button(
+                        onClick = { numero += "6" },
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
+                    ) {
+                        Text(text = "6")
+                    }
+                    Button(
+                        onClick = {},
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4279402906))
+                    ) {
+                        Text(text = "-")
+                    }
                 }
-                Button(
-                    onClick = {},
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4279402906))
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 10.dp)
+                        .padding(top = 10.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Text(text = "x")
+                    Button(
+                        onClick = { numero += "1" },
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
+                    ) {
+                        Text(text = "1")
+                    }
+                    Button(
+                        onClick = { numero += "2" },
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
+                    ) {
+                        Text(text = "2")
+                    }
+                    Button(
+                        onClick = { numero += "3" },
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
+                    ) {
+                        Text(text = "3")
+                    }
+                    Button(
+                        onClick = {},
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color(4279402906)
+                        )
+                    ) {
+                        Text(text = "+")
+                    }
+
+                }
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 10.dp)
+                        .padding(top = 10.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Button(
+                        onClick = { numero += "0" },
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
+                    ) {
+                        Text(text = "0")
+                    }
+                    Button(
+                        onClick = {},
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
+                    ) {
+                        Text(text = ",")
+                    }
+                    Button(
+                        onClick = {},
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4279402906))
+                    ) {
+                        Text(text = "/")
+                    }
+                    Button(
+                        onClick = {},
+                        Modifier
+                            .height(61.dp)
+                            .width(85.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(4279402906))
+                    ) {
+                        Text(text = "=")
+                    }
+
                 }
             }
-            Row(
+            TextField(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 10.dp),
-                //horizontalArrangement = Arrangement.SpaceAround
-            ) {
-                Button(
-                    onClick = { numero += "4" },
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
-                ) {
-                    Text(text = "4")
-                }
-                Button(
-                    onClick = { numero += "5" },
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
-                ) {
-                    Text(text = "5")
-                }
-                Button(
-                    onClick = { numero += "6" },
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
-                ) {
-                    Text(text = "6")
-                }
-                Button(
-                    onClick = {},
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4279402906))
-                ) {
-                    Text(text = "-")
-                }
-            }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 10.dp),
-                // horizontalArrangement = Arrangement.SpaceAround
-            ) {
-                Button(
-                    onClick = { numero += "1" },
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
-                ) {
-                    Text(text = "1")
-                }
-                Button(
-                    onClick = { numero += "2" },
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
-                ) {
-                    Text(text = "2")
-                }
-                Button(
-                    onClick = { numero += "3" },
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
-                ) {
-                    Text(text = "3")
-                }
-                Button(
-                    onClick = {},
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(4279402906)
+                    .fillMaxHeight()
+                    .width(500.dp)
+                    .padding(top = 20.dp)
+                    .padding(start = 70.dp)
+                    .padding(end = 70.dp)
+                    .padding(bottom = 40.dp),
+
+                colors = TextFieldDefaults.colors(
+                    focusedContainerColor = Color.Transparent,
+                    unfocusedContainerColor = Color.Transparent,
+                    focusedIndicatorColor = Color.Transparent,
+                    unfocusedIndicatorColor = Color.Transparent
+                ),
+                value = "",
+                onValueChange = {},
+                placeholder = {
+                    Text(
+                        text = "0" + numero,
+                        color = Color.LightGray,
+                        fontSize = 80.sp,
+                        lineHeight = 70.sp,
                     )
-                ) {
-                    Text(text = "+")
-                }
+                },
+                textStyle = androidx.compose.material3.MaterialTheme.typography.bodyLarge,
 
-            }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 10.dp),
-                //horizontalArrangement = Arrangement.SpaceAround
-            ) {
-                Button(
-                    onClick = { numero += "0" },
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
-                ) {
-                    Text(text = "0")
-                }
-                Button(
-                    onClick = {},
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4281545523))
-                ) {
-                    Text(text = ",")
-                }
-                Button(
-                    onClick = {},
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4279402906))
-                ) {
-                    Text(text = "/")
-                }
-                Button(
-                    onClick = {},
-                    Modifier
-                        .height(61.dp)
-                        .width(85.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(4279402906))
-                ) {
-                    Text(text = "=")
-                }
-
-            }
+                )
 
 
         }
