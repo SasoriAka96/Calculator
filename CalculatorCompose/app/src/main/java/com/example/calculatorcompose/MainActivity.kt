@@ -2,8 +2,6 @@ package com.example.calculatorcompose
 
 import android.content.res.Configuration
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -17,7 +15,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.paddingFrom
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -35,13 +32,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.text.style.TextAlign
+
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.calculatorcompose.ui.theme.CalculatorComposeTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -57,9 +55,14 @@ class MainActivity : ComponentActivity() {
     showBackground = true, showSystemUi = true,
     device = "spec:width=448dp,height=998dp,orientation=landscape"
 )
+@Preview(
+    showBackground = true, showSystemUi = true,
+    device = "spec:width=448dp,height=998dp,orientation=portrait"
+)
 
 @Composable
 fun Calculadora() {
+
     val configuration = LocalConfiguration.current
 
     when (configuration.orientation) {
@@ -80,14 +83,13 @@ fun Calculadora() {
 @Composable
 fun LandscapeScreenComposition() {
     var numero by remember { mutableStateOf("") }
-
     Column(
         Modifier
             .fillMaxWidth()
             .fillMaxHeight()
             .background(color = Color.Black),
     ) {
-        Row() {
+        Row {
             Column(
                 modifier = Modifier
                     .width(500.dp)
@@ -332,7 +334,7 @@ fun LandscapeScreenComposition() {
                 onValueChange = {},
                 placeholder = {
                     Text(
-                        text = "0" + numero,
+                        text = "0$numero",
                         color = Color.LightGray,
                         fontSize = 80.sp,
                         lineHeight = 70.sp,
@@ -352,7 +354,7 @@ fun LandscapeScreenComposition() {
 @Composable
 fun VerticalScreenComposition() {
     var numero by remember { mutableStateOf("") }
-    var scrollScrollState = rememberScrollState()
+    val scrollScrollState = rememberScrollState()
     Column(
         Modifier
             .fillMaxSize()
@@ -379,7 +381,7 @@ fun VerticalScreenComposition() {
                     onValueChange = {},
                     placeholder = {
                         Text(
-                            text = "0" + numero,
+                            text = "0$numero",
                             color = Color.LightGray,
                             fontSize = 80.sp,
                         )
