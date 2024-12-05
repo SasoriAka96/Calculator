@@ -20,7 +20,7 @@ Este proyecto me ha servido para entender el funcionamiento de las distintas vis
 
 ## Screenshots
 
-![App Screenshot](https://snipboard.io/2ZnYeL.jpg)
+<img src="https://snipboard.io/2ZnYeL.jpg" alt="App Screenshot" width="400">
 ![App Screenshot](https://snipboard.io/teRbyp.jpg)
 
 
