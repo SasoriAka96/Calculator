@@ -21,7 +21,7 @@ Este proyecto me ha servido para entender el funcionamiento de las distintas vis
 ## Screenshots
 
 <img src="https://snipboard.io/2ZnYeL.jpg" alt="App Screenshot" width="400">
-![App Screenshot](https://snipboard.io/teRbyp.jpg)
+<img src="https://snipboard.io/teRbyp.jpg" alt="App Screenshot" width="400">
 
 
 ## Autor
